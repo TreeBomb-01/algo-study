@@ -1,5 +1,18 @@
 {
-    "python-envs.defaultEnvManager": "ms-python.python:conda",
-    "python-envs.defaultPackageManager": "ms-python.python:conda",
-    "python-envs.pythonProjects": []
+    "python.terminal.activateEnvironment": false,
+    "python.terminal.activateEnvInCurrentTerminal": false,
+    "python.defaultInterpreterPath": "",
+    "python.condaPath": "",
+    "python.pythonPath": "",
+    "terminal.integrated.shellIntegration.enabled": false,
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "args": ["-NoProfile", "-NoLogo"]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "python.terminal.launchArgs": [],
+    "python.terminal.executeInFileDir": false,
+    "python.autoComplete.addBrackets": false
 }
