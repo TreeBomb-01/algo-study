@@ -1,36 +1,22 @@
 def solution(id_list, report, k):
-    answer = []
-    send_li={}
-    req_list={}
-    stop=[]
+    report_by={u: set() for u in id_list}
+    report_cnt={u: 0 for u in id_list}
+
+    for i in report:
+        a,b = i.split(" ")
+        if b in report_by[a]:
+            continue
+        report_by[a].add(b)
+        report_cnt[b] += 1
+
+    ban={u for u , i in report_cnt.items() if i>=k}
+
+    answer=[]
     for i in id_list:
-        send_li[i]=[]
-        req_list[i]=0
-        answer.append(0)
+        cnt = sum(1 for target in report_by[i] if target in ban)
+        answer.append(cnt)
 
-    for i in report: #[0] 신고한 유저, [1] 신고당한 유저
-        tmp = i.split(" ")
-        if tmp[1] in send_li[tmp[0]]:
-            pass
-        else:
-            send_li[tmp[0]].append(tmp[1])
-            req_list[tmp[1]] += 1
-            if req_list[tmp[1]] >= k:
-                stop.append(tmp[1])
-
-    print(stop)
-    n=0
-    for i in send_li:
-        for j in stop:
-            if j in send_li[i]:
-                answer[n] += 1
-        n+=1
-        
-
-    print(answer)
     return answer
-
-
 
 
 solution(["con", "ryan"],["ryan con", "ryan con", "ryan con", "ryan con"],3)
