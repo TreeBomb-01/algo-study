@@ -14,5 +14,6 @@
     "terminal.integrated.defaultProfile.windows": "PowerShell",
     "python.terminal.launchArgs": [],
     "python.terminal.executeInFileDir": false,
-    "python.autoComplete.addBrackets": false
+    "python.autoComplete.addBrackets": false,
+    "explorer.compactFolders": false
 }
