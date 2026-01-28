@@ -1,5 +1,3 @@
-from collections import deque
-
 i = int(input())
 for i in range(i):
     answer=0
@@ -8,11 +6,10 @@ for i in range(i):
     li = list(input().split())
     for j in range(int(a)):
         l.append([int(li[j]),j])
-    l = deque(l)
+    
     while True:
         t = True
-        #print(l,t)
-        n = l.popleft()
+        n = l.pop(0)
         for j,_ in l:
             if n[0] < j:
                 l.append(n)
@@ -20,7 +17,6 @@ for i in range(i):
                 break
         if t:
             answer += 1
-            #print(n[1]," == ", b, " ", n[1]==b)
             if int(n[1]) == int(b):
                 print(answer)
                 break
